@@ -31,9 +31,9 @@ function _map(list, mapper) {
 }
 
 // 리스트 순회하는 함수 -for 문 돌면서 내부에서 하는 일 위임
-function _each(list, lter){
+function _each(list, iter){
   for(let i =0;i<list.length; i++) {
-    lter(list[i])
+    iter(list[i])
   }
   return list
 }
