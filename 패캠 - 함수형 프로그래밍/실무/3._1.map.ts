@@ -108,3 +108,17 @@ const list = (list: Array<Item>) => {
   .reduce((tags,tag)=>tags+tag,"")
 }`
 }
+
+
+const totalCal2 = (list: Array<Item>, getValue: (item: Item) => number) => {
+  // 재고가 있는 상품만 getValue를 실행하기 위해 새로운 변수 result추가
+  const result:Array<number> = []
+  list.forEach(function (item) {
+    if (!item.outOfStock) {
+    result.push(getValue(item))
+    }
+  })
+    
+  return result.reduce((total,value)=> total + value)
+}
+
